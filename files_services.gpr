@@ -1,0 +1,23 @@
+with "../shared.gpr";
+with "../strings_services/strings_services.gpr";
+
+library project Files_Services is
+
+  Src_Lst := ();
+  Src_Lst := Src_Lst & "./src";
+  for Source_Dirs use Src_Lst;
+
+  Exc_Src_Lst := ();
+  for Excluded_Source_Files use Exc_Src_Lst;
+
+  for Object_Dir use "./obj";
+  for Library_Dir use "./lib";
+
+  for Library_Name use "files_services";
+  for Library_Kind use "static";
+
+  package Compiler renames Shared.Compiler;
+
+  package Builder renames Shared.Builder;
+
+end Files_Services;
