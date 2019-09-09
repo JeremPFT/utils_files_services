@@ -1,4 +1,4 @@
-with "../shared.gpr";
+with "../common/shared.gpr";
 with "../strings_services/strings_services.gpr";
 
 library project Files_Services is
@@ -10,8 +10,8 @@ library project Files_Services is
   Exc_Src_Lst := ();
   for Excluded_Source_Files use Exc_Src_Lst;
 
-  for Object_Dir use "./obj";
-  for Library_Dir use "./lib";
+  for Object_Dir use Shared.Object_Dir;
+  for Library_Dir use Shared.Library_Dir;
 
   for Library_Name use "files_services";
   for Library_Kind use "static";
